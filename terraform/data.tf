@@ -26,10 +26,12 @@ data "aws_iam_policy_document" "lambda_get_stats_execution" {
   statement {
     effect = "Allow"
     actions = [
-      "dynamodb:GetItem"
+      "dynamodb:GetItem",
+      "dynamodb:Query"
     ]
     resources = [
-      data.aws_dynamodb_table.ShortLinkTable.arn
+      data.aws_dynamodb_table.ShortLinkTable.arn,
+      "${data.aws_dynamodb_table.ShortLinkTable.arn}/index/ReverseIndex"
     ]
   }
 }
