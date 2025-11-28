@@ -22,7 +22,7 @@ data "aws_iam_policy_document" "assume_role" {
   }
 }
 
-data "aws_iam_policy_document" "lambda_redirect_url_execution" {
+data "aws_iam_policy_document" "lambda_get_stats_execution" {
   statement {
     effect = "Allow"
     actions = [
