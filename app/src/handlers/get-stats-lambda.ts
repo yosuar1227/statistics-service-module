@@ -49,6 +49,9 @@ const getStatsByCodeLambda = async (
         statusCode: 200,
         body: JSON.stringify(response),
         headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "Content-Type",
+            "Access-Control-Allow-Methods": "OPTIONS,GET",
             "Content-type": "application/json"
         }
     }
